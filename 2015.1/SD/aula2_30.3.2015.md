@@ -11,9 +11,9 @@
    Encapsula os bytes da mensagem que serão transmitidas via _rede_
 
 #### Tipos de arquitetura de rede
--Arquitetura Descentralizada
-  -Client-server
-  -etc
 - Arquitetura Descentralizada
-  -Peer-2-Peer
+  - Client-server
+  - etc
+- Arquitetura Descentralizada
+  - Peer-2-Peer
 

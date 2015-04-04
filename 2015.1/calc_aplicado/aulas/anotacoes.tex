@@ -1,0 +1,104 @@
+\documentclass[portugues, 11pt]{article}
+\usepackage{notes}
+
+% Uncomment these for a different family of fonts
+% \usepackage{cmbright}
+% \renewcommand{\sfdefault}{cmss}
+% \renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\thiscoursecode}{Cálculo Aplicado}
+\newcommand{\thiscoursename}{TM406}
+\newcommand{\thisprof}{Aleksandro}
+\newcommand{\me}{Victor Pedro}
+\newcommand{\thisterm}{2015.1}
+\newcommand{\website}{google.com/+VictorPedro}
+% Headers
+\chead{\thiscoursename \ Notas de Aula}
+\lhead{\thisterm}
+
+
+%%%%%% TITLE %%%%%%
+\newcommand{\notefront} {
+\pagenumbering{roman}
+\begin{center}
+
+{\ttfamily \url{\website}} {\small}
+
+\textbf{\Huge{\noun{\thiscoursecode}}}{\Huge \par}
+
+{\large{\noun{\thiscoursename}}}\\ \vspace{0.1in}
+
+  {\noun \thisprof} \ $\bullet$ \ {\noun \thisterm} \ $\bullet$ \ {\noun {UFRRJ}} \\
+
+  \end{center}
+  }
+
+% Begin Document
+\begin{document}
+
+  % Notes front
+  \notefront
+  % Table of Contents and List of Figures
+  \tocandfigures
+  % Abstract
+  \doabstract{Este documento apresenta notas sobre a cadeira de Cálculo Aplicado no curso de Ciência da Computação.}
+
+
+  	\section{Exercícios Sobre Integral Dupla}
+	
+    	\begin{enumerate}
+    		\item Encontre o volume do sólido limitado pela superfície $ f(f,x)=4 - \frac{x^2}{4} - \frac{y^2}{16}$, os planos $x=3$, $y=2$ e os planos coordenados.
+    		\textbf{Resposta}
+    		
+    		\begin{equation}
+    			V = \int_{R}\int{f(x,y) dA}
+    		\end{equation}
+    		
+    		\begin{equation}
+    			= \int_0^3\int_0^2{4-\frac{x^2}{9}-\frac{y^2}{16}} dy dx
+    		\end{equation}
+    		
+    		\begin{equation}
+    			= \int_0^3{4y-\frac{x^2y}{9}-\frac{y^3}{48}\mid_0^2}dx
+    		\end{equation}
+    		\begin{equation}
+    			= \int_0^3{8-\frac{2x^2}{9}-\frac{8}{48}-(0-0-0)} dx
+    		\end{equation}
+    		\begin{equation}
+    			= \int_0^3{\frac{2x^2}{9}+\frac{47}{6}}dx
+    		\end{equation}
+    		\begin{equation}
+    			= \frac{2x^3}{27}+\frac{47x}{6}\mid_0^3
+    		\end{equation}
+    		\begin{equation}
+    			= -2 + \frac{47}{2} - 0 = \frac{43}{2}
+    		\end{equation}
+    	\end{enumerate}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Teorema de Fubini}
+	Seja $R$ o retângulo $R=[a.b]$ e $[c,d]$. Se $f$ é contínua em $R$, então
+	\begin{equation}
+		\int_R\int{f(x,y)} dA = \int_c^d\int_a^b{f(x,y)}dxdy 
+		= \int_a^b\int_c^d{f(x,y)} dydx
+	\end{equation}
+	
+	\underline{Ex.} Calcule $\int_R\int{y^2x}dA$ no retângulo $-3\leq x\leq 2$ e $0 \leq y \leq 1$.
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Integrais Duplas em Regiões não-retangulares}
+	As Integrais iteradas podem apresentar limites de integração não-ctes, como
+	
+	\begin{equation}
+		\int_a^b\int_{g_{1}(x)}^{g_{2}(x)}{f(x,y) dydx}
+	\end{equation}
+	E
+	\begin{equation}
+		\int_c^d\int_{h_{1}(x)}^{h_{2}(x)}{f(x,y) dydx}
+	\end{equation}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{document}

@@ -1,6 +1,9 @@
 \documentclass[portugues, 11pt]{article}
 \usepackage{notes}
 \usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+
 
 % Uncomment these for a different family of fonts
 % \usepackage{cmbright}
@@ -16,6 +19,7 @@
 % Headers
 \chead{\thiscoursename \ Notas de Aula}
 \lhead{\thisterm}
+\pgfplotsset{width=10cm, compat=1.9}
 
 
 %%%%%% TITLE %%%%%%
@@ -45,23 +49,40 @@
   \doabstract{Este documento apresenta notas sobre a cadeira de Cálculo Aplicado no curso de Ciência da Computação.}
   
   	\section{Organização do Curso}
-	\begin{multline}
-		Unidade & 0 : Derivadas Parciais
-				& 1 : Integrais Múltiplas
-				& 2 : Tópicos de cálculo vetorial
-	\end{multline}
+	\begin{align*}
+		Unidade\, & 0 : Derivadas Parciais \\
+				& 1 : Integrais Múltiplas \\
+				& 2 : Tópicos de cálculo vetorial\\
+	\end{align*}
 	
 
 	\section{Derivadas Parciais}
 	
 	Seja $f: D(f) \subset \mathbf{R}^n \rightarrow \mathbb{R}$ uma função de $n$ varáveis. O conceito de derivada parcial segue do fato de tratarmos de uma função de $n$ variáveis como uma função de uma variável considerando as demais fixas (constantes).
 	
-	\begin{dfnt}[n=2]
+	\begin{defn}[n=2]
 		Seja $f: D(f) \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ uma função de duas variáveis $x$ e $y$. \\
 		\begin{itemize}
-			\item[(a)] a derivada parcial de $f$ em relação à $x$ é a função: $$ D_1f: D(f) \rightarrow \mathbb{R} uma função de duas variáveis $x$ e $y$. 
+			\item[(a)] a derivada parcial de $f$ em relação à $x$ é a função: $$ D_1f: D(f) \rightarrow \mathbb{R} $$ definida por
+			$$ D_1 f(x,y) = \lim_{\Delta x \rightarrow 0} \frac{f(x + \Delta x, y) - f(x,y)}{\Delta x}$$.
+			Se este existir.
+			
+			\item[(b)] Analogamente, a derivada parcial de $f$ em relação à $y$ é a função $ D_2 f: D(f) \rightarrow \mathbb{R} $ definida por:
+			$$ D_2 f(x,y) = \lim_{\Delta y \rightarrow 0} \frac{f(x,y + \Delta y) - f(x,y)}{\Delta y} $$
+			Se este existir.
 		\end{itemize}
-	\end{dfnt}
+		
+		\textbf{OBS.:} outras notações: $$ D_1 f, fx, f1, \frac{\delta f}{\delta x} $$
+	\end{defn}
+	
+	\begin{exmp}
+		Dada $f(x,y) = x^2-2xy+y^2$, encontre $D_1 f(x,y)$ e $D_2 f(x,y)$ utilizando a definição anterior.
+		\begin{align*}
+		D_1 f(x,y) & = \lim_{\Delta x \rightarrow 0} \frac{(x + \Delta x, y) - f(x,y)}{\Delta x} \\
+		& = \lim_{\Delta x \rightarrow 0}
+		\end{align*}
+	\end{exmp}
+
 
 	
 	
@@ -163,7 +184,7 @@
 		\begin{align*}
 		\iiint_G & {f(x,y,z)}{dv}
 		\\
-		\iint_G  & [\int_{g_1 (x,y)}^{g_2 (x,y)} {f(x,y,z)}{dz} ] {dA}
+		\iint_G  & \left [\int_{g_1 (x,y)}^{g_2 (x,y)} {f(x,y,z)}{dz} \right ] {dA}
 		\end{align*}
 	\end{thrm}
 	
@@ -196,14 +217,57 @@
 			\includegraphics[width=0.8\textwidth]{imagens/solucao_integral_tripla_1}
 			\caption{Solução - Parte 1}
 			\label{fig:int_tripla_1}			
-		\end{figure}
-		\begin{figure}[h]
-			\centering
 			\includegraphics[width=0.8\textwidth]{imagens/solucao_integral_tripla_2}
 			\caption{Solução - Parte 2}
 			\label{fig:int_tripla_2}			
 		\end{figure}
 	\end{exmp}
+	
+	\textbf{OBS} Podemos utilizar uma integral tripla para determinar o volume de um sólido $G$ da seguinte maneira:
+	$$ V(G) = \iiint_G 1 \,dV$$
+	
+	\begin{exmp}
+		Demonstre através de uma integral tripla que o volume do cilindro circular reto, de altura $H$ e raio da base $R$ é.
+		$$V = \pi R^2H$$
+		\underline{Sólido $xy$ simples}
+		
+		\begin{align*}
+			\underline{região polar}& \,\,\,& 0 \leq z \leq H \\
+			0 \leq \theta \leq H	& \,\,\, & V(G) = \iiint_G 1 \,dV \\
+			0 \leq r \leq R 		& \,\,\, & = \iint_R \left [ \int_0^H 1 \,dV \right ] \,dA \\ 
+		\end{align*}
+	\end{exmp}
+	
+	\begin{exmp}
+		Idem ao anterior, mas usando integral dupla:
+		$$V(G) = \iint_R H \,dA = \dots = \pi R^2H.$$
+	\end{exmp}
+	
+	\section{Coordenadas Ciliíndricas}
+	
+	As coordenadas cilíndricas $(r,\theta,z)$ de um ponto $(x,y,z)$ são definidas por:
+	\begin{equation}
+	\left \{
+		\begin{tabular}{l}
+			x = r $\cos \theta$ \\
+			y = r $\sin \theta$ \\
+			z = z
+		\end{tabular}
+	\right \}
+	\end{equation}
+	
+	Onde $r\leq 0$ e $\theta$ é um ângulo que pode variar de zero à $2\pi$,insto é, $\theta \in [0,2\pi]$
+	
+	\textbf{OBS:} Com as igualdades acima, temos:
+	\begin{itemize}
+	\item $x^2 + y^2 r^2 \cos^2 \theta + r^2 \sin^2 \theta = r^2(\cos^2 \theta + \sin^2 \theta) = r^2. $\\
+	\item $\tan \theta$
+	\end{itemize}
+	
+
+	
+	
+
 
 		
 	

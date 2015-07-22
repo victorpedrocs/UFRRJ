@@ -1,0 +1,14 @@
+\begin{thebibliography}{}
+
+\bibitem[Feofiloff 2015]{paulo:15}
+Feofiloff, P. (2015).
+\newblock Algoritmo de kruskal.
+\newblock
+  \url{http://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/kruskal.html}.
+
+\bibitem[Thomas H.~Cormen 2009]{knuth:84}
+Thomas H.~Cormen, Charles E.~Leiserson, R. L. R. C.~S. (2009).
+\newblock {\em Introduction to Algorithms}.
+\newblock MIT Press.
+
+\end{thebibliography}

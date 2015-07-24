@@ -91,7 +91,7 @@ int myComp(const void* a, const void* b)
 }
 
 // The main function to construct MST using Kruskal's algorithm
-void KruskalMST(struct Graph* graph)
+void KruskalMST(struct Graph* graph, int nSubGrafos)
 {
     int V = graph->V;
     struct Edge result[V];  // Tnis will store the resultant MST
@@ -115,7 +115,7 @@ void KruskalMST(struct Graph* graph)
     }
     
     // Number of edges to be taken is equal to V-1
-    while (e < V - 1)
+    while (e < V - nSubGrafos)
     {
         // Step 2: Pick the smallest edge. And increment the index
         // for next iteration
@@ -146,7 +146,7 @@ void KruskalMST(struct Graph* graph)
 int main()
 {
     std::string linha;
-    int i, contadorArestas; // iteradores para criar o grafo
+    int i, contadorArestas, nSubGrafos; // iteradores para criar o grafo
     int V, E; // numero de vertices e arestas
     struct Graph* graph;
     
@@ -173,8 +173,12 @@ int main()
             graph->edge[i].weight = stoi(linha);
         }
     }
-    
-    KruskalMST(graph);
+
+
+    cout << "Diga o numero de sub-grafos desejado\n";
+    scanf("%d", &nSubGrafos);
+
+    KruskalMST(graph, nSubGrafos);
     
     return 0;
 }

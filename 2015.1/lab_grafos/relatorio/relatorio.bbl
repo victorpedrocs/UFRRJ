@@ -5,10 +5,26 @@ Feofiloff, P. (2015).
 \newblock Algoritmo de kruskal.
 \newblock
   \url{http://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/kruskal.html}.
+\newblock Acessado em: Jul. 2015.
+
+\bibitem[GeeksForGeeks 2012]{geeks:2012}
+GeeksForGeeks (2012).
+\newblock Greedy algorithms | set 2 (kruskal’s minimum spanning tree
+  algorithm).
+
+\bibitem[Ime 2015]{p}
+Ime (2015).
+\newblock Algoritmo de kruskal.
+\newblock \url{https://pt.wikipedia.org/wiki/Algoritmo_de_Kruskal}.
+\newblock Acessado em: Jul. 2015.
 
 \bibitem[Thomas H.~Cormen 2009]{knuth:84}
 Thomas H.~Cormen, Charles E.~Leiserson, R. L. R. C.~S. (2009).
 \newblock {\em Introduction to Algorithms}.
 \newblock MIT Press.
+
+\bibitem[Wikipedia 2015]{Doe:2009:Online}
+Wikipedia (2015).
+\newblock Algoritmo de kruskal {@ONLINE}.
 
 \end{thebibliography}

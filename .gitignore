@@ -1,0 +1,13 @@
+workspace/
+SECCIM_2014/
+2015.1/SD/livros/
+
+*.class
+
+# all latex files
+*.aux
+*.idx
+*.log
+*.out
+*.synctex.gz
+*.toc
